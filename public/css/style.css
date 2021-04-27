@@ -1,0 +1,141 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
+
+body {
+    background-color: #0f0f17;
+    margin: 35px 35px 20px 35px;
+    padding: 0px;
+}
+
+body,
+input {
+    font-size: 1em;
+    color: #ffffff;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    margin-bottom: 20px;
+    height: 10vh;
+    background-color: #15151d;
+}
+
+footer {
+    margin-top: 20px;
+    height: 10vh;
+    background-color: #15151d;
+}
+
+.main-container {
+    flex: 1;
+    display: flex;
+}
+
+.main-top {
+    flex:80;
+    margin-right: 20px;
+}
+
+.main-bottom {
+    flex:80;
+}
+
+.main-aside {
+    flex:20;
+}
+
+
+.video-title {
+    font-weight: 700;
+    /*position:relative;*/
+    text-transform: uppercase;
+}
+
+.video-underline {
+    height: 1px;
+    position: relative;
+    top: 10px;
+    background-color: #3f3f45;
+    margin: 0px 0px 40px;
+}
+
+.video-transparent-layer {
+    height: 80%;
+    /*pointer-events: none;*/
+    background-color: #ffffff;
+}
+
+.video-controller {
+
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.information-text {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.information-underline {
+    height: 1px;
+    position: relative;
+    top: 10px;
+    background-color: #3f3f45;
+    margin: 0px 0px 40px;
+}
+
+.information-tab {
+    display: flex;
+    flex-direction: row;
+}
+
+.information-tab > .tab {
+    flex: 1;
+    height: 40px;
+    padding: 10px;
+    margin: 0;
+    border: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: #15151d
+}
+
+.tab-content {
+    height: 100%;
+    overflow-y: scroll;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #1a1a23;
+}
+
+.timeline {
+    font-weight: 700;
+    color: #079ce0;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+    .main-container {
+        flex-direction: column;
+    }
+    .main-aside {
+        width: initial;
+        height: 95px;
+    }
+}

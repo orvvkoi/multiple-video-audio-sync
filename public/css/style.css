@@ -1,5 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
 
+/* ==========================================================================
+   Base Layout
+   ========================================================================== */
 body {
     background-color: #0f0f17;
     margin: 35px 35px 20px 35px;
@@ -36,18 +39,23 @@ footer {
 }
 
 .main-top {
-    flex:80;
+    flex: 80;
     margin-right: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .main-bottom {
-    flex:80;
+    flex: 80;
 }
 
 .main-aside {
-    flex:20;
+    flex: 20;
 }
 
+/* ==========================================================================
+   Video Layout
+   ========================================================================== */
 
 .video-title {
     font-weight: 700;
@@ -64,14 +72,21 @@ footer {
 }
 
 .video-transparent-layer {
-    height: 80%;
+    flex: 1;
     /*pointer-events: none;*/
     background-color: #ffffff;
 }
 
 .video-controller {
-
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
 }
+
+
+/* ==========================================================================
+   Side Layout
+   ========================================================================== */
 
 .information {
     display: flex;
@@ -119,10 +134,246 @@ footer {
     border: 1px solid #1a1a23;
 }
 
-.timeline {
-    font-weight: 700;
-    color: #079ce0;
+
+
+/* ==========================================================================
+   Icon styles
+   ========================================================================== */
+
+.video-icons {
+    background-image: url('/asset/svg/sprites.svg');
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    background-size: 30px;
 }
+
+.video-icons-pause {
+    background-position: 0 0;
+}
+
+.video-icons-play-skip-back {
+    background-position: 0 -30px;
+}
+
+.video-icons-play-skip-forward {
+    background-position: 0 -60px;
+}
+
+.video-icons-play {
+    background-position: 0 -90px;
+}
+
+.video-icons-volume-high {
+    background-position: 0 -120px;
+}
+
+.video-icons-volume-medium {
+    background-position: 0 -150px;
+}
+
+.video-icons-volume-mute {
+    background-position: 0 -180px;
+}
+
+/* ==========================================================================
+   Video Button Layout
+   ========================================================================== */
+
+.video-buttons .video-timer {
+    flex: 1;
+}
+
+.video-button .play-controls {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-controller .fs {
+    display: block;
+    background-color: transparent;
+    border: 1px;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    float: right;
+    right: 2px;
+    margin-right: 10px;
+    outline: none;
+    overflow: visible
+}
+
+.video-controller .video-progress {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    /*background-color: rgba(225, 225, 225, 0.2);*/
+    z-index: 10;
+    margin-top: 0;
+}
+
+.video-controller .progress-bar {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 8px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    cursor: pointer;
+    background-color: #70737f;
+}
+
+.video-controller .slider {
+    height: 8px;
+    display: block;
+    position: relative;
+    background-color: red;
+    width: 0%;
+}
+
+.video-controller .video-buttons {
+    height: 28px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.video-controller .indicator {
+    width: 15px;
+    height: 15px;
+    margin-top: -11px;
+    position: absolute;
+    z-index: 99;
+    border-radius: 100%;
+    background-color: red
+}
+
+/* ==========================================================================
+   Volume Button Layout
+   ========================================================================== */
+.volume-controls {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.volume-controls .volume-button {
+    background-color: transparent;
+    cursor: pointer;
+    flex: 0 1 40px;
+}
+
+.volume-controls .volume-progress {
+    display: flex;
+    align-items: center;
+    flex: 0 1 15%;
+    height: 14px;
+    cursor: pointer;
+}
+
+.volume-controls .volume-bar {
+    position: relative;
+    height: 4px;
+    background-color: #70737f;
+    width: 100%;
+}
+
+.volume-controls .volume-slider {
+    position: relative;
+    height: 4px;
+    background-color: red;
+    width: 100%;
+}
+
+.volume-controls .volume-indicator {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    margin-left: -6px;
+    left: 100%;
+    top: -4px;
+    background-color: #ffffff;
+    border-radius: 50px;
+}
+
+.volume-controls .volume-indicator:hover {
+    opacity: 0.8;
+}
+
+
+/* ==========================================================================
+   Video Progress bar -> Timestamp tooltips
+   ========================================================================== */
+.video-progress .hoverTimeCode,
+.video-progress .timeCode {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: -23px 0 0 -12px;
+    opacity: 1;
+    transition: opacity .25s ease-out;
+    pointer-events: none;
+}
+
+.video-progress .hoverTimeCode span,
+.video-progress .timeCode span {
+    position: relative;
+    left: -50%;
+    padding: 2px 4px;
+    font-size: 10px;
+    font-family: Verdana, sans-serif;
+    border-radius: 2px;
+}
+
+.video-progress .hoverTimeCode span::before,
+.video-progress .timeCode span::before {
+    bottom: -4px;
+    margin-left: -20px;
+}
+
+.video-progress .hoverTimeCode span::after,
+.video-progress .hoverTimeCode span::before,
+.video-progress .timeCode span::after,
+.video-progress .timeCode span::before {
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    margin-left: -3px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 3px solid transparent;
+    content: "";
+}
+
+.video-progress .hoverTimeCode {
+    margin-left: 0;
+}
+
+.video-progress .hoverTimeCode span::after {
+    border-top-color: rgba(23, 35, 34, .85);
+}
+
+.video-progress .hoverTimeCode span {
+    background: rgba(23, 35, 34, .85);
+    color: #fff;
+}
+
+.video-progress .timeCode span {
+    background: #fff;
+    color: #000;
+    margin-left: 23px;
+}
+
+.video-progress .timeCode span::after {
+    border-top-color: #fff;
+}
+
 
 .flex-center {
     display: flex;
@@ -130,10 +381,32 @@ footer {
     align-items: center;
 }
 
+.button-clear {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/*.button-clear:hover {
+    opacity: 0.9;
+    transition-duration: 0.2s;
+}*/
+/*
+.button-clear:active {
+    opacity: 0.95;
+}*/
+
+/*.button-clear:focus:not(:focus-visible) {
+    outline: 0;
+}*/
+
 @media screen and (max-width: 800px) {
     .main-container {
         flex-direction: column;
     }
+
     .main-aside {
         width: initial;
         height: 95px;

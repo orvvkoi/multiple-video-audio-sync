@@ -18,7 +18,10 @@
             <div class="video-title">Video</div>
             <div class="video-underline"></div>
             <div class="video-transparent-layer">
-                <canvas id="player"></canvas>
+                <!--<canvas id="player"></canvas>-->
+                <div>
+                    <video width="50%" height="50%" src="http://media.w3.org/2010/05/video/movie_300.webm"></video>
+                </div>
             </div>
 
             <div class="video-controller">
@@ -26,21 +29,19 @@
                   @TODO
                   북마크, split 기능 확장
                  -->
-                <div id="videoProgress" class='video-progress'>
-                    <div class='progress-bar'>
+                <div class='video-progress'>
+                    <div id="videoProgress" class='progress-bar'>
                         <div id="videoSlider" class='slider' ></div>
                         <div id="videoIndicator" class='indicator'></div>
-                        <!--<div class="hoverTimeCode">
+                       <!-- <div id="videoLoaded" class='loaded' ></div>-->
+                        <div id="timeCodeArrowBox" class="time-code-arrow-box">
                             <span></span>
                         </div>
-                        <div class="timeCode" >
-                            <span></span>
-                        </div>-->
                     </div>
                 </div>
                 <div class="video-buttons">
                     <div class="video-timer">
-                        00:00:00/00:00:00
+                        <span class='video-elapsed'>00:00:00</span><span class='video-duration'>00:00:00</span>
                     </div>
 
                     <div class="play-controls">

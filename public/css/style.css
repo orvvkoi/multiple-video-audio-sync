@@ -146,6 +146,7 @@ footer {
     width: 30px;
     height: 30px;
     background-size: 30px;
+    cursor:pointer;
 }
 
 .video-icons-pause {
@@ -184,7 +185,13 @@ footer {
     flex: 1;
 }
 
-.video-button .play-controls {
+.video-duration:before {
+    content: "/";
+    padding-right: 1ch;
+    padding-left: 1ch;
+}
+
+.video-buttons .play-controls {
     display: flex;
     flex-direction: row;
     flex: 1;
@@ -209,26 +216,25 @@ footer {
 .video-controller .video-progress {
     display: flex;
     flex: 1;
-    align-items: center;
-    /*background-color: rgba(225, 225, 225, 0.2);*/
     z-index: 10;
     margin-top: 0;
+    align-items: center;
+    justify-content: center;
 }
 
 .video-controller .progress-bar {
     position: relative;
     z-index: 0;
-    width: 100%;
+    width: 99%;
     height: 8px;
     box-sizing: border-box;
     border-radius: 2px;
-    cursor: pointer;
     background-color: #70737f;
+    cursor: pointer;
 }
 
 .video-controller .slider {
     height: 8px;
-    display: block;
     position: relative;
     background-color: red;
     width: 0%;
@@ -246,10 +252,12 @@ footer {
     width: 15px;
     height: 15px;
     margin-top: -11px;
+    margin-left: -7.5px;
     position: absolute;
     z-index: 99;
     border-radius: 100%;
-    background-color: red
+    background-color: red;
+    pointer-events: none;
 }
 
 /* ==========================================================================
@@ -310,84 +318,47 @@ footer {
 /* ==========================================================================
    Video Progress bar -> Timestamp tooltips
    ========================================================================== */
-.video-progress .hoverTimeCode,
-.video-progress .timeCode {
+.video-progress .time-code-arrow-box {
     position: absolute;
     top: 0;
     left: 0;
-    margin: -23px 0 0 -12px;
-    opacity: 1;
+    margin-top: -29px;
+    margin-left: -26px;
+    opacity: 0;
     transition: opacity .25s ease-out;
+    display: inline;
     pointer-events: none;
 }
 
-.video-progress .hoverTimeCode span,
-.video-progress .timeCode span {
-    position: relative;
-    left: -50%;
-    padding: 2px 4px;
-    font-size: 10px;
-    font-family: Verdana, sans-serif;
+.video-progress .time-code-arrow-box span {
+    display: block;
+    padding: 2px 6px;
+    font-size: 1em;
     border-radius: 2px;
+    background-color: #282e2fba;
+    color: #ffffff;
+    pointer-events: none;
 }
 
-.video-progress .hoverTimeCode span::before,
-.video-progress .timeCode span::before {
-    bottom: -4px;
-    margin-left: -20px;
-}
 
-.video-progress .hoverTimeCode span::after,
-.video-progress .hoverTimeCode span::before,
-.video-progress .timeCode span::after,
-.video-progress .timeCode span::before {
+.video-progress .time-code-arrow-box span::after,
+.video-progress .time-code-arrow-box span::before {
     position: absolute;
-    bottom: -3px;
+    bottom: -6px;
     left: 50%;
-    margin-left: -3px;
-    border-left: 3px solid transparent;
-    border-right: 3px solid transparent;
-    border-top: 3px solid transparent;
+    margin-left: -5px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid transparent;
+}
+
+.video-progress .time-code-arrow-box span::after {
+    border-top-color: #282e2fba;
     content: "";
 }
 
-.video-progress .hoverTimeCode {
-    margin-left: 0;
-}
-
-.video-progress .hoverTimeCode span::after {
-    border-top-color: rgba(23, 35, 34, .85);
-}
-
-.video-progress .hoverTimeCode span {
-    background: rgba(23, 35, 34, .85);
-    color: #fff;
-}
-
-.video-progress .timeCode span {
-    background: #fff;
-    color: #000;
-    margin-left: 23px;
-}
-
-.video-progress .timeCode span::after {
-    border-top-color: #fff;
-}
 
 
-.flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.button-clear {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    overflow: hidden;
-    cursor: pointer;
-}
 
 /*.button-clear:hover {
     opacity: 0.9;

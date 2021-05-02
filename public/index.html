@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Chat</title>
+    <title>Video Sync</title>
     <link rel="stylesheet" href="/css/style.css">
     <script src="/js/index.js"></script>
 </head>
@@ -10,12 +10,12 @@
 
 <div class="wrap">
     <header>
-        header
+        HEADER ::: Moderator, Customer  Profile
     </header>
 
     <main class="main-container">
         <section class="main-top">
-            <div class="video-title">Video</div>
+            <div class="video-title">Video Title</div>
             <div class="video-underline"></div>
             <div class="video-transparent-layer">
                 <!--<canvas id="player"></canvas>-->
@@ -25,12 +25,8 @@
             </div>
 
             <div class="video-controller">
-                <!--
-                  @TODO
-                  북마크, split 기능 확장
-                 -->
-                <div class='video-progress'>
-                    <div id="videoProgress" class='progress-bar'>
+                <div class='video-progress-container'>
+                    <div id="videoProgress" class='video-progress'>
                         <div id="videoSlider" class='slider' ></div>
                         <div id="videoIndicator" class='indicator'></div>
                        <!-- <div id="videoLoaded" class='loaded' ></div>-->
@@ -39,27 +35,29 @@
                         </div>
                     </div>
                 </div>
-                <div class="video-buttons">
-                    <div class="video-timer">
-                        <span class='video-elapsed'>00:00:00</span><span class='video-duration'>00:00:00</span>
-                    </div>
+                <div class="video-control-container">
+                    <div class="video-controls">
+                        <div class="video-timer">
+                            <span class='video-elapsed'>00:00:00</span><span class='video-duration'>00:00:00</span>
+                        </div>
 
-                    <div class="play-controls">
-                        <div id="btnPlayBack" class="video-icons-play-skip-back video-icons button-clear"></div>
-                        <div id="btnPlayPause" class="video-icons-play video-icons button-clear"></div>
-                        <div id="btnPlayForward" class="video-icons-play-skip-forward video-icons button-clear"></div>
-                    </div>
+                        <div class="play-controls">
+                            <div id="btnPlayBack" class="video-icons-play-skip-back video-icons button-clear"></div>
+                            <div id="btnPlayPause" class="video-icons-play video-icons button-clear"></div>
+                            <div id="btnPlayForward" class="video-icons-play-skip-forward video-icons button-clear"></div>
+                        </div>
 
-                    <div class="volume-controls">
-                        <div id="btnMute" class='volume-button video-icons-volume-high video-icons button-clear'></div>
-                    <!--    <div class='video-icons-volume-medium video-icons button-clear'></div>
-                        <div class='video-icons-volume-mute video-icons button-clear'></div>-->
+                        <div class="volume-controls">
+                            <div id="btnMute" class='volume-button video-icons-volume-high video-icons button-clear'></div>
+                            <!--    <div class='video-icons-volume-medium video-icons button-clear'></div>
+                                <div class='video-icons-volume-mute video-icons button-clear'></div>-->
 
 
-                        <div id="volumeProgress" class='volume-progress'>
-                            <div class="volume-bar">
-                                <div id="volumeSlider" class="volume-slider"></div>
-                                <div id="volumeIndicator" class="volume-indicator"></div>
+                            <div id="volumeProgress" class='volume-progress'>
+                                <div class="volume-bar">
+                                    <div id="volumeSlider" class="volume-slider"></div>
+                                    <div id="volumeIndicator" class="volume-indicator"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -70,19 +68,23 @@
 
         <aside class="main-aside">
             <div class="information">
-                <div class="information-text">Transcription</div>
+                <div class="information-text">TIMELINE</div>
                 <div class="information-underline"></div>
                 <div class="information-tab">
                     <div class="tab">DEBUG</div>
                     <div class="tab">DEBUG</div>
+                    <div class="tab">DEBUG</div>
+                    <div class="tab">DEBUG</div>
                 </div>
-                <div class="tab-content"></div>
+                <div class="tab-content">
+                    test
+                </div>
             </div>
         </aside>
     </main>
 
     <footer>
-        footer
+        FOOTER ::: video information, video clip list
     </footer>
 
 </div>

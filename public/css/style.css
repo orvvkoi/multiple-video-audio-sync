@@ -4,7 +4,7 @@
    Base Layout
    ========================================================================== */
 body {
-    background-color: #0f0f17;
+    background-color: #0F0F17FF;
     margin: 35px 35px 20px 35px;
     padding: 0px;
 }
@@ -81,6 +81,7 @@ footer {
     margin-top: 15px;
     display: flex;
     flex-direction: column;
+    padding: 0px 7px 0px 7px;
 }
 
 
@@ -181,17 +182,17 @@ footer {
    Video Button Layout
    ========================================================================== */
 
-.video-buttons .video-timer {
+.video-controls .video-timer {
     flex: 1;
 }
 
-.video-duration:before {
+.video-timer .video-duration:before {
     content: "/";
     padding-right: 1ch;
     padding-left: 1ch;
 }
 
-.video-buttons .play-controls {
+.video-controls .play-controls {
     display: flex;
     flex-direction: row;
     flex: 1;
@@ -199,33 +200,23 @@ footer {
     align-items: center;
 }
 
-.video-controller .fs {
-    display: block;
-    background-color: transparent;
-    border: 1px;
-    height: 40px;
-    width: 40px;
-    position: absolute;
-    float: right;
-    right: 2px;
-    margin-right: 10px;
-    outline: none;
-    overflow: visible
-}
-
-.video-controller .video-progress {
+.video-controller .video-progress-container {
     display: flex;
     flex: 1;
     z-index: 10;
     margin-top: 0;
-    align-items: center;
-    justify-content: center;
 }
 
-.video-controller .progress-bar {
+.video-controller .video-control-container {
+    height: 28px;
+    display: flex;
+    margin-top: 10px;
+}
+
+.video-progress-container .video-progress {
     position: relative;
     z-index: 0;
-    width: 99%;
+    width: 100%;
     height: 8px;
     box-sizing: border-box;
     border-radius: 2px;
@@ -233,22 +224,21 @@ footer {
     cursor: pointer;
 }
 
-.video-controller .slider {
+.video-control-container .video-controls {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.video-progress .slider {
     height: 8px;
     position: relative;
     background-color: red;
     width: 0%;
 }
 
-.video-controller .video-buttons {
-    height: 28px;
-    display: flex;
-    flex-direction: row;
-    margin-top: 10px;
-    justify-content: space-between;
-}
-
-.video-controller .indicator {
+.video-progress .indicator {
     width: 15px;
     height: 15px;
     margin-top: -11px;
@@ -263,12 +253,13 @@ footer {
 /* ==========================================================================
    Volume Button Layout
    ========================================================================== */
-.volume-controls {
+.video-controls .volume-controls {
     display: flex;
     align-items: center;
     flex: 1;
     flex-direction: row;
     justify-content: flex-end;
+    padding-right: 5px;
 }
 
 .volume-controls .volume-button {
@@ -316,7 +307,7 @@ footer {
 
 
 /* ==========================================================================
-   Video Progress bar -> Timestamp tooltips
+   Video Progress -> Timestamp tooltips
    ========================================================================== */
 .video-progress .time-code-arrow-box {
     position: absolute;
@@ -355,6 +346,23 @@ footer {
 .video-progress .time-code-arrow-box span::after {
     border-top-color: #282e2fba;
     content: "";
+}
+
+
+/* ==========================================================================
+   Aside scroll content, .tab-content
+   ========================================================================== */
+
+.time-line .time-stamp {
+    background-color: #3068EFFF;
+}
+
+.timeline .time-stamp {
+    background-color: #3068EFFF;
+}
+
+.timeline .text {
+    background-color: #00000011;
 }
 
 
